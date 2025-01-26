@@ -1,45 +1,128 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Life Story</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Site</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>This is me - Niv Salav</h1>
-          <img id="img1" src="images/1.jpg" alt="Niv Salav">
-    
-    <div class="container">
-        <h2 id="About me">About Me</h2>
-        <p>
-            My name is Niv Salav, I am 30 years old, married to Miriam, and father of two lovely children, Emma (4 years old) and Ariel (11 months old).<br>
-            I live in Ashkelon and work as a payroll accountant and human resources manager at a company that manufactures playgrounds throughout the country and abroad.<br>
-            I chose to do a career change to the world of technology for the position of software testing - QA because my main profession of payroll accountant has pretty much exhausted itself. I want to pursue something I always loved and wanted to learn—the world of technology and in particular QA.<br>
-            From a young age, I have loved technology, and working with software and encountering bugs piqued my interest in what happens behind the scenes and how it works.
-        </p>
+  <!-- Page 1 -->
+  <section class="hero">
+<nav class="menu">
+  <a href="#About Me">About Me</a>
+  <a href="#if you got">Gallery&Portfolio</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-        <section id="key-strengths">
-            <h2>Key Strengths</h2>
-            <ul>
-                <li><strong>Attention to Detail:</strong> Ensuring accuracy and precision in every task, critical for identifying errors and maintaining high standards.</li>
-                <li><strong>Analytical Thinking:</strong> Skilled in analyzing complex processes and data to provide clear and actionable insights.</li>
-                <li><strong>Problem-Solving Skills:</strong> Adept at identifying issues, investigating root causes, and delivering effective solutions.</li>
-                <li><strong>Time Management:</strong> Efficiently handling tasks under pressure while meeting strict deadlines.</li>
-            </ul>
-        </section>
+    </nav>
+    <div class="intro">
 
-        <section id="hobbies">
-            <h2>Hobbies</h2>
-            <ul>
-                <li><strong>Staying Active:</strong> I recently discovered CrossFit, and it has become a big part of my routine. I enjoy pushing my limits and staying fit.</li>
-                <li><strong>Gaming Enthusiast:</strong> In my free time, I love playing on my PlayStation. It's my way of relaxing and enjoying immersive adventures.</li>
-            </ul>
-			
-			
-    <img src="images/cf.jpg" alt="CrossFit">
-    <img src="images/ps.jpg" alt="PlayStation">
-        </section>
+      <h1>Niv Salav a QA Engineer</h1>
+      <p class="motivational">Work hard in silence. Let your success make the noise</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/niv-salav-633367281/" target="_blank">LinkedIn</a>
+		<a href="#if you got">Gallery&Portfolio</a>
+      </div>
     </div>
+  </section>
+
+  <!-- Page 2 -->
+  <section class="about" id="about">
+  <div class="content">
+    <!-- Your normal, left-aligned profile image -->
+    <img src="images/me.jpg" alt="Your Photo" class="profile-pic">
+
+    <div class="text">
+      <h2 id="About Me">About Me</h2>
+      <p class="headline">
+        I'm 30 years old, married + 2 sweet kids from Ashkelon. <br>
+        Looking for my first QA job.
+      </p>
+      <p class="details">
+        Today I work as a payroll accountant and human resources manager.<br>
+        I chose to do a career change to QA because I want to fulfill myself.
+        <br>I always strive to release a product at the best level whether it is
+        in my personal life or in my professional life.
+        <br>I have a lot of desire to succeed and make the company I work for succeed.
+      </p>
+
+      <!-- Section that will dynamically show Strengths or Hobbies -->
+      <div id="qa-section" class="strengths">
+        <h3>My Strengths as a QA Engineer</h3>
+        <ul>
+          <li>Attention to detail.</li>
+          <li>Problem-solving mindset.</li>
+          <li>Strong communication.</li>
+        </ul>
+      </div>
+
+      <!-- Buttons to toggle between Strengths and Hobbies -->
+      <div class="buttons">
+        <button id="btn-strengths">Strengths</button>
+        <button id="btn-hobbies">Hobbies</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript for toggling Strengths and Hobbies -->
+<script>
+  // Define two lists: strengths and hobbies
+  const strengths = [
+    "Attention to detail.",
+    "Problem-solving mindset.",
+    "Strong communication."
+  ];
+  const hobbies = [
+    "Play on PS5.",
+    "Watch soccer.",
+    "Do sports, especially CrossFit."
+  ];
+
+  // Event listeners for buttons
+  document.getElementById("btn-strengths").addEventListener("click", () => {
+    updateQASection("My Strengths as a QA Engineer", strengths);
+  });
+
+  document.getElementById("btn-hobbies").addEventListener("click", () => {
+    updateQASection("My Hobbies", hobbies);
+  });
+
+  // Function to update content in #qa-section
+  function updateQASection(title, items) {
+    const qaSection = document.getElementById("qa-section");
+    qaSection.innerHTML = `
+      <h3>${title}</h3>
+      <ul>
+        ${items.map(item => `<li>${item}</li>`).join("")}
+      </ul>
+    `;
+  }
+</script>
+
+  <!-- Page 3 -->
+  
+<!-- Page 3: Gallery & Portfolio -->
+<section class="Gallery-Portfolio" id="if you got">
+  <h2>If you got all the way here, first of all <b>THANK YOU!</b></h2>
+  <p>I would be happy if you would see my portfolio and hope to hear from you soon.</p>
+
+  <!-- First row of images -->
+  <div class="gallery-row">
+    <img src="images/journey1.jpg" alt="Journey 1">
+    <img src="images/journey2.jpg" alt="Journey 2">
+    <img src="images/journey3.png" alt="Journey 3">
+  </div>
+
+  <!-- Second row of images (replace these with your own) -->
+  <div class="gallery-row">
+    <img src="images/placeholder1.png" alt="Placeholder 1">
+    <img src="images/placeholder2.png" alt="Placeholder 2">
+    <img src="images/placeholder3.png" alt="Placeholder 3">
+  </div>
+</section>
+
 
 </body>
 </html>
