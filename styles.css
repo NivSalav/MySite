@@ -37,6 +37,7 @@ section {
   height: 100%;
   background: rgba(0, 0, 0, 0.35);
   z-index: 1;
+  
 }
 
 /* ----------------------------
@@ -51,8 +52,53 @@ section {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  z-index: 1000; /* Ensures the menu stays above other content */
+  z-index: 1000; /* Ensures the menu  stays above other content */
 }
+
+.intro-box {
+  background-color: rgba(0, 0, 0, 0.6); /* רקע שחור שקוף */
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  z-index: 2;
+}
+
+.intro h1 {
+  font-size: 5rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.motivational {
+  font-size: 2.5rem;
+  color: #ddd;
+  font-family: Tahoma, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+/* Typewriter style */
+.motivational {
+  font-size: 2.5rem;
+  color: #ddd;
+  font-family: Tahoma, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s steps(1) infinite;
+  color: #fff;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 
 .menu a {
   color: #fff;
@@ -60,6 +106,7 @@ section {
   text-decoration: none;
   margin: 0 15px;
   transition: color 0.3s;
+  font-size: 16px; /* ⬅️ כאן אתה שולט על הגודל */
 }
 
 .menu a:hover {
@@ -89,6 +136,69 @@ section {
   color: #ddd;
 }
 
+.links a {
+  background-color: #000;      /* רקע לבן */
+  color: #000;                 /* טקסט שחור */
+  border: 1px solid #fff;      /* מסגרת שחורה */
+  font-weight: bold;
+  padding: 10px 18px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-toggle {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.lang-toggle button {
+  background-color: #000;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.lang-toggle button:hover {
+  background-color: #333;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: #fff;
+  animation: bounce 2s infinite;
+  z-index: 3;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+
+.links a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#about-text {
+  width: 100%;
+  direction: rtl; /* עברית כברירת מחדל */
+}
+
+#about-text h2,
+#about-text p {
+  text-align: right;
+}
+
 .intro .links a {
   color: #fff;
   margin: 0 10px;
@@ -101,6 +211,20 @@ section {
 
 .intro .links a:hover {
   background: #555;
+}
+
+/* ודא שה-left-side לא נופל שורה */
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ודא שה-text לא מתכווץ */
+.text {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ------------------------------------
@@ -133,6 +257,20 @@ section {
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-under-image {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
 
 /* If you want the image to keep its aspect ratio automatically,
    you can remove 'height: 300px;' and let width control it. */
